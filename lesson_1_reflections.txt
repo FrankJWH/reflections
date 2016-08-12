@@ -1,0 +1,23 @@
+1. How did viewing a diff between two versions of a file help you see the bug that was introduced?
+
+    It easily compares two files and shows what the difference between the two and pinpoint how to correct it. By using the format diff -u oldfile.txt newfile.txt, you can refer to the plus as the additional changes to the new file and the minus as the old file changes that were subtracted from the new file.
+
+2. How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+
+    It can help me by looking at previous changes and compare what I think is the better version and combine the changes of all the history files to get the best result. Also I can learn from previous files why I made a certain change.
+
+3. What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+
+    Having manual commits not only are under your control but you are tracking them with notes on what was changed. You won't have to figure out that a change was simply a typo rather than a major bug fix that affects your program.
+
+4. Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+
+    Since Git is constructed for coding in mind across multiple files, it takes notice in saving multiple files in one commit to reflect the changes in how the files interact with each other.
+
+5. How can you use the commands git log and git diff to view the history of files?
+
+    git log tells me the total history of the changes made with each commit regarding files that were changed, and git diff focuses on specific code changes to compare between same files or files that were changed in general.
+
+6. How might using version control make you more confident to make changes that could break something?
+
+   It allows me to realize that any risky change I wish to make in terms of debugging and testing is reversible, which in turn allows for more efficacious testing to make my apps more robust and fault free 

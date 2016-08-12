@@ -1,0 +1,5 @@
+1. What happens when you initialize a repository? Why do you need to do it?
+
+    It sets up your git config files and prompts it to be version-controlled for commits and changes for this repo. A repo is like a special directory for a collection of files that are being version controlled and committed as the accepted version of the project from the working project.
+
+2.
