@@ -2,4 +2,8 @@
 
     It sets up your git config files and prompts it to be version-controlled for commits and changes for this repo. A repo is like a special directory for a collection of files that are being version controlled and committed as the accepted version of the project from the working project.
 
-2.
+2. How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+    The working directory is where all the files are being constructed and revised for changes in the repository but doesn't directly edit it. The staging area is where all the possible changes are put with commits made to inform what was changed and where. It provides a failsafe for your editable files without making any final changes to the project.
+
+3. 
