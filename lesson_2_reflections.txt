@@ -6,4 +6,6 @@
 
     The working directory is where all the files are being constructed and revised for changes in the repository but doesn't directly edit it. The staging area is where all the possible changes are put with commits made to inform what was changed and where. It provides a failsafe for your editable files without making any final changes to the project.
 
-3. 
+3. How can you use the staging area to make sure you have one commit per logical change?
+
+    I can make a single logical change then add and then commit the change directly afterwards.
