@@ -1,0 +1,3 @@
+1. When would you want to use a remote repository rather than keeping all our work local?
+
+  Usually when you want to have a general file not composed within the git workflow, usually keep certain things separate.
