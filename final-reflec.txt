@@ -2,3 +2,16 @@ This is my final file for git.
 I'm practicing how to create branches and merge and reset stuff.
 First I will add this line and delete it.
 Another line
+
+git merge <branch> for merge specified <branch> into current branch
+
+git branch -d <branch> to delete branch after changes have been commited
+
+git branch -dr origin/<branch> to delete branch & remote branch on github
+
+git push origin  --delete <remote-branch> to only delete remote github branch 
+
+git reset (<file>) to unstage file, or leave out file to unstage all
+
+git reset --hard <commit> to reset back to commit permanently
+
