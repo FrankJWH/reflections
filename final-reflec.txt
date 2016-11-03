@@ -15,4 +15,8 @@ git reset (<file>) to unstage file, or leave out file to unstage all
 
 git reset --hard <commit> to reset back to commit permanently
 
+git checkout -- <file> to remove a file being asked to be "git add ."
+
+git commit --amend to add another file or change to the last commit
+
 Thanks!
