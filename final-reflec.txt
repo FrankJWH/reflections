@@ -19,4 +19,10 @@ git checkout -- <file> to remove a file being asked to be "git add ."
 
 git commit --amend to add another file or change to the last commit
 
+git remote -v   to see current remotes and their links
+
+git remote add upstream <remote-URL> to add another remote repo to pull/push from ("upstream" is usually the original parent repo fork)
+
+git remote set-url <remote-name> <URL> to redirect remote's current link to a new link
+
 Thanks!
