@@ -11,6 +11,12 @@ git branch -dr origin/<branch> to delete branch & remote branch on github
 
 git push origin  --delete <remote-branch> to only delete remote github branch 
 
+git push -u origin master  to make your first commit to your new repository
+
+git rm --cached <filename> to remove the file from git push for gitignore (opposite of git add)
+
+git rm -r --cached . to remove all these files from the stage
+
 git reset (<file>) to unstage file, or leave out file to unstage all
 
 git reset --hard <commit> to reset back to commit permanently
