@@ -15,7 +15,7 @@ git push -u origin master  to make your first commit to your new repository
 
 git rm --cached <filename> to remove the file from git push for gitignore (opposite of git add)
 
-git rm -r --cached . to remove all these files from the stage
+git rm -r --cached . to remove all these files from the stage, below is safer, research git head and path
 
 git reset (<file>) to unstage file, or leave out file to unstage all
 
