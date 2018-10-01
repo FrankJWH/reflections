@@ -17,7 +17,11 @@ git push origin  --delete <remote-branch> to only delete remote github branch
 
 git push -u origin master  to make your first commit to your new repository
 
-git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits
+git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits, DANGEROUS
+
+git diff <local-branch-name> <remote/local-branch-name> to see what the remote has changed vs your local
+
+git fetch to update current branch's remote
 
 git fetch --dry-run: see what will happen when you run a pull
 
@@ -38,5 +42,7 @@ git remote -v   to see current remotes and their links
 git remote add upstream <remote-URL> to add another remote repo to pull/push from ("upstream" is usually the original parent repo fork)
 
 git remote set-url <remote-name> <URL> to redirect remote's current link to a new link
+
+git remote update to update all the branches on that remote (i.e. origin will update all branches)
 
 Thanks!
