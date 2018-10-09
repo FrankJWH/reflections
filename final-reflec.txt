@@ -19,6 +19,8 @@ git push -u origin master  to make your first commit to your new repository
 
 git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits, DANGEROUS
 
+git pull <remote-name> <remote-branch-to-pull-from:branch-to-get-pull>: this provides the branch that you want updates from and apply it to the branch that you want the commit updates. Normally to keep a new branch updated for a PR
+
 git diff <local-branch-name> <remote/local-branch-name> to see what the remote has changed vs your local
 
 git fetch to update current branch's remote
