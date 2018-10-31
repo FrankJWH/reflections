@@ -3,6 +3,8 @@ I'm practicing how to create branches and merge and reset stuff.
 First I will add this line and delete it.
 Another line
 
+This link has commonly used git commands: https://github.com/joshnh/Git-Commands
+
 git add -p <file>: this will allow you to add specific lines to stage instead of the entire file
 
 git merge <branch> for merge specified <branch> into current branch
