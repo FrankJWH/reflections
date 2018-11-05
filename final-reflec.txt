@@ -51,4 +51,10 @@ git remote set-url <remote-name> <URL> to redirect remote's current link to a ne
 
 git remote update to update all the branches on that remote (i.e. origin will update all branches)
 
+git stash: add whatever changes you have working on your tree to the stash to reuse later and work on something else
+
+git stash pop: take the most recent stash and apply it to the current working tree
+
+git stash apply: same as pop but we keep a copy of the stash for later use in other branches (possibly)
+
 Thanks!
