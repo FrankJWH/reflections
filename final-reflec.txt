@@ -57,4 +57,8 @@ git stash pop: take the most recent stash and apply it to the current working tr
 
 git stash apply: same as pop but we keep a copy of the stash for later use in other branches (possibly)
 
+git stash -u: stash working tree changes, including untracked files
+
+git stash -a: stash everything including ignored files
+
 Thanks!
