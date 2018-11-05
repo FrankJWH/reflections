@@ -25,6 +25,8 @@ git pull <remote-name> <remote-branch-to-pull-from:branch-to-get-pull>: this pro
 
 git diff <local-branch-name> <remote/local-branch-name> to see what the remote has changed vs your local
 
+git diff <branch-one>...<branch-two>: check what are the changes that both one and two doesn't have based on their common ancestor
+
 git fetch to update current branch's remote
 
 git fetch --dry-run: see what will happen when you run a pull
