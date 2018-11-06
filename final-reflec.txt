@@ -53,12 +53,24 @@ git remote update to update all the branches on that remote (i.e. origin will up
 
 git stash: add whatever changes you have working on your tree to the stash to reuse later and work on something else
 
+git stash list: list out all the stashes that are saves
+
+git stash save "message": will save a working tree into your stash with a message and add it to the top of the stash stack (i.e. stash@{0}: On <branch>: message will show here)
+
 git stash pop: take the most recent stash and apply it to the current working tree
+
+git stash pop stash@{<number>}: will pop and apply the stash at index to current working directory
 
 git stash apply: same as pop but we keep a copy of the stash for later use in other branches (possibly)
 
 git stash -u: stash working tree changes, including untracked files
 
 git stash -a: stash everything including ignored files
+
+git stash -p: similar to git add -p where only the hunks chosen will be added to the stash for later review
+
+git stash drop stash@{<number>}: clear the indicated stash index
+
+git stash clear: remove all stashes stored
 
 Thanks!
