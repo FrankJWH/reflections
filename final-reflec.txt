@@ -7,7 +7,7 @@ This link has commonly used git commands: https://github.com/joshnh/Git-Commands
 
 git add -p <file>: this will allow you to add specific lines to stage instead of the entire file
 
-git merge <branch> for merge specified <branch> into current branch
+git blame <file>: produce a commit history of every change for that file by date, author, hash and lines that changed
 
 git branch -d <branch> to delete branch after changes have been commited
 
@@ -15,13 +15,9 @@ git branch -dr origin/<branch> to delete branch & remote branch on github
 
 git branch -a to show all the branches including the hidden branches you never worked with
 
-git push origin  --delete <remote-branch> to only delete remote github branch 
+git commit --amend to add another file or change to the last commit
 
-git push -u origin master  to make your first commit to your new repository
-
-git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits, DANGEROUS
-
-git pull <remote-name> <remote-branch-to-pull-from:branch-to-get-pull>: this provides the branch that you want updates from and apply it to the branch that you want the commit updates. Normally to keep a new branch updated for a PR
+git checkout -- <file> to remove a file being asked to be "git add ."
 
 git diff <local-branch-name> <remote/local-branch-name> to see what the remote has changed vs your local
 
@@ -31,17 +27,15 @@ git fetch to update current branch's remote
 
 git fetch --dry-run: see what will happen when you run a pull
 
-git rm --cached <filename> to remove the file from git push for gitignore (opposite of git add)
+git merge <branch> for merge specified <branch> into current branch
 
-git rm -r --cached . to remove all these files from the stage, below is safer, research git head and path
+git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits, DANGEROUS
 
-git reset (<file>) to unstage file, or leave out file to unstage all
+git pull <remote-name> <remote-branch-to-pull-from:branch-to-get-pull>: this provides the branch that you want updates from and apply it to the branch that you want the commit updates. Normally to keep a new branch updated for a PR
 
-git reset --hard <commit> to reset back to commit permanently
+git push origin  --delete <remote-branch> to only delete remote github branch 
 
-git checkout -- <file> to remove a file being asked to be "git add ."
-
-git commit --amend to add another file or change to the last commit
+git push -u origin master  to make your first commit to your new repository
 
 git remote -v   to see current remotes and their links
 
@@ -50,6 +44,14 @@ git remote add upstream <remote-URL> to add another remote repo to pull/push fro
 git remote set-url <remote-name> <URL> to redirect remote's current link to a new link
 
 git remote update to update all the branches on that remote (i.e. origin will update all branches)
+
+git reset (<file>) to unstage file, or leave out file to unstage all
+
+git reset --hard <commit> to reset back to commit permanently
+
+git rm --cached <filename> to remove the file from git push for gitignore (opposite of git add)
+
+git rm -r --cached . to remove all these files from the stage, default git reset is safer, research git head and path
 
 git stash: add whatever changes you have working on your tree to the stash to reuse later and work on something else
 
@@ -72,7 +74,5 @@ git stash -p: similar to git add -p where only the hunks chosen will be added to
 git stash drop stash@{<number>}: clear the indicated stash index
 
 git stash clear: remove all stashes stored
-
-git blame <file>: produce a commit history of every change for that file by date, author, hash and lines that changed
 
 Thanks!
