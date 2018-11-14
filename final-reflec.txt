@@ -27,6 +27,10 @@ git fetch to update current branch's remote
 
 git fetch --dry-run: see what will happen when you run a pull
 
+git log --grep="<grep pattern>": log only files that have specified patterns listed in the git log
+
+git log --author="<author-name>": list the author commits in this branch for git log
+
 git merge <branch> for merge specified <branch> into current branch
 
 git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits, DANGEROUS
