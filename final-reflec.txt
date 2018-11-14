@@ -73,4 +73,6 @@ git stash drop stash@{<number>}: clear the indicated stash index
 
 git stash clear: remove all stashes stored
 
+git blame <file>: produce a commit history of every change for that file by date, author, hash and lines that changed
+
 Thanks!
