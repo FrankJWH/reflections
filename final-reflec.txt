@@ -19,6 +19,10 @@ git commit --amend to add another file or change to the last commit
 
 git checkout -- <file> to remove a file being asked to be "git add ."
 
+git checkout --ours <file> to resolve merge conflict by using our addition
+
+git checkout --theirs <file> is same as above but using theirs
+
 git diff <local-branch-name> <remote/local-branch-name> to see what the remote has changed vs your local
 
 git diff <branch-one>...<branch-two>: check what are the changes that both one and two doesn't have based on their common ancestor
