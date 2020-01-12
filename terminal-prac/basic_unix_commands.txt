@@ -1,0 +1,136 @@
+chown
+	chown joe:coolgang : changes the file owner to joe if login exists and group changed to coolgang
+	chown :coolgang : changes group ownership to coolgang without changing owner ownership, vice versa for owner sans group
+chmod 
+	chmod 751 file.txt: allows change in file permissions; 4 = read, 2 = write, 1 = exec; first num = owner, second = grp, third = all;
+compress, gzip
+    compress filename: compress file into .Z file then delete old file
+    gzip filename: same as above but into .gz file
+    compress -d filename: decompress .Z file
+    gzip -d filename: decompress .gz file
+
+find
+    find /dir/ -name "filename" -print outputfile: find within specified directory the file or regex file and print using output choice
+    find . -name "*.txt" -exec wc -l '{}' ';': same as above but execute commands word count long list and input each name in {} and end command using ";" which runs wc on each .txt files rather than all of them once at the same time
+	find . -name "*.txt" -exec wc -l '{}' +: same as the above BUT this will run wc on all files AFTER it finds ALL .txt files, therfore running it once
+    find / -size +1M: find from root down all files with size 1MB or more, + means same or more, - means same or less
+    find /home -name "*.txt" -print 2>/dev/null: from /home dir, look for files ending in .txt and print error to /dev/null
+    find ./test -maxdepth 2 -iname "*.Php": in test dir find files ending in .Php case INsensitive, max search 2 file levels below dir
+    find ./test -name 'abc*' ! -name '*.php': in test dir find files starting in abc BUT not ending in .php
+    find -name '*.php' -o -name '*.txt': find file from current dir ending in .php and also files ending in .txt
+    find ./test -type f -name "abc*": in test find files staring in abc of type f which is file, other types include d which is directory
+    find ./test ./anotherDir: find all files in both directories
+    find -name ".*": find hidden files
+    find -user someguy: find files owned by user named someguy
+    find -group devteam: same but for group
+    find / -mtime +50 –mtime -100: find at root files modified inclusive between 50 to 100 hours, amin means access hours atime is access days, etc.
+    find / -exec ls -s {} \; | sort -n -r | head -5: at root find and execute all files in ls format based on -s or size, pipe to sort 
+            numerically -n and reverse -r the order, then pipe with just the first 5 files.
+	find / -type f -and	-name "*.jpg" -and -delete: find files with given name regex and delete it, -and is implied when not printed, -or -not exist
+
+grep
+    grep "string to search" filename: finds the line with the string in file
+    grep '[0-9]\{3\}-[0-9]\{4\}' filename: look for a number in the format of xxx-xxxx, \{num\} means repeat regex num times 
+    grep -i "string" filename: case insensitive
+    grep -w "string" file: find the word, not part of another word
+    grep -r "string" /dir/: find word recursively within directory
+    grep -h "str" /dir/: supress results without dir path
+    grep -c 'str' file: count number of occurrences of the word
+    grep -n 'str' file: print linenumber with line of word
+    grep -v 'str' file: print lines that don't match word
+    cat /proc/cpuinfo | grep -i 'Model': cat file, then use result to grep for word Model
+    grep -l 'filename' *.txt: list the name of files matching
+    grep -l 'string' *: list files within current directory that matches string
+    grep –A 4 'str' file: display string and '4' lines after string in file
+    grep -B 5 'str' file: " " " '5' text lines before string in file
+
+jobs
+    show list of jobs running in background
+
+kill
+    kill %1: kills process job [1] from jobs list
+    kill 27501: kills job with PID of 27501 
+    kill -9 27501: kill PID with number signal kill of highest priority
+    kill -l: show list of signals with number code
+
+killall
+    killall string: kill processes that possess the string term within their job descrip.
+
+man
+    man command: display manual page for command
+    man 3 command: display page 3 of manual for that command
+    man -k keyword: look inside manual for that keyword specified
+    man intro: guide to using man and looking up info; look into man 1 intro, man 2 intro, etc...
+
+mount, unmount
+    mount /mnt/floppy: mount removable media, floppy disk in this case. /etc/fstab lists all removable medias and where they are
+    unmount """: same as above but removes media and forces changes to be written back before eject
+
+objdump
+    used to disassemble binary files, see man pages
+
+printenv
+    printenv | less: prints all environmental variables, i.e. $USER
+
+ps
+    ps: shows all processes running
+    ps -fae: show exhaustive list of processes in detail
+    ps -aeH: full process hierarchy including init process(main process)
+
+sed - stream editor
+	sed -i -- 's/foo/bar/g' dir/*: search for instances of foo and replace it with bar in dir/{all files and directories here}
+	echo "front" | sed '1s/front/back': print front and pass it to sed, then replace just 1st line that contains 'front' with 'back'
+	sed '5,8s/front/back' filename.txt: replace 'front' with 'back' from lines 5 to 8, but only change one instance per line, add '5,8s/front/back/g' to change every single occurance
+	sed -n '/SUSE/p' file.txt: print every line containing 'SUSE' in file.txt, -n informs not to print every line by default so only the 'SUSE' lines appear
+	 research more since this is a powerful useful tool🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺
+
+sort
+    sort [filename1, filename2, ..]: sort lines alphabetically into one
+    sort -n [filename1, ..] > filename.txt: same as above but numerically ando a file
+
+tar
+    tar -cvf 'archivename' filenames: create archivename.tar backup with the filenames -f you can specify
+    tar -tvf archivename: list tar file contents
+    tar -xvf archivename: extract files from tar file
+
+top
+    shows monitor of system activity
+    s: update frequ.
+    u: display processes of one user
+    k: kill process of PID
+    q: quit
+
+uniq
+    sort file.txt | uniq > output.txt: removes duplicate adjacent lines, best to use uniq with pipes to be useful
+
+unmask
+	research on this🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺
+
+xargs
+	🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺 🍺
+	find ~ -type f -name 'foo*' -print | xargs ls -l: xargs creates an argument list for piped command that don't accept stdin
+	find ~ -type f -name 'foo*' -print0 | xargs --null ls -l: sometimes carriage returns may obscure the results for xargs which may cause an error, using -print0 will create a null delimiter for each find result instead of carriage returns for proper argument grouping for xargs
+
+&
+    find / -print 1>output &: appending ampersand runs job in background
+
+--
+    grep -- -f: double dash signifies end of option arguments, this will allow to grep for "-f" without mistaking as option
+
+-----Miscellaneous-----
+
+echo *: displays actions of commands, this will print everything in current directory
+echo $((2 + 5)): performs arithmetic expressions, this will echo "7"
+echo A-{1,2,3}-B: perform pattern with each parameter in brace separately, this will show "A-1-B A-2-B A-3-B"
+echo Letter_{Z..A}: prints range including first term to last, example prints "Letter_Z Letter_Y Letter_X"......etc.
+echo ls $USER: prints environmental variable or includes it within a command, this example will display the user directory contents
+file $(ls /usr/bin/* | grep bin/zip): performs command replacement and uses output as an argument, this will list everything within /usr/bin, then pipe the output to grep which will only find results containing bin/zip, which will be sent as a parameter for file to list what kind of files each result is.
+echo -e "Insert newline \n\n\n": execute escapes within the quotes, this will print three new lines after message
+echo $? : Returns the exit status of a program that just ran, such as a c++ program
+ctrl-l: same as clear
+
+command arg > file.txt 2>/dev/null: perform command and direct output to file.txt and redirect error to /dev/null
+command > file.txt 2>&1: redirect stderr to stdout and redirect all of that to file.txt
+command &> file.txt: same as command above but more elegant, unable to pipe afterwards
+command 2>&1 | less: perform command and push stderr to stdout, then push output to less
+command 2>&1 >/dev/less | less: only give stderr to less

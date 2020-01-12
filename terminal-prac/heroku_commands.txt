@@ -1,0 +1,51 @@
+--Heroku Commands--
+
+    --Basics--
+
+heroku help: list commands
+
+heroku login: login to heroku using heroku account
+
+heroku create: create a heroku project for current local project
+
+heroku create <name>: create heroku project with name
+    shorthand for "heroku apps:create <name>"
+
+    --Remote & Renaming--
+
+"heroku apps:rename <newname>": change project name and update heroku remote
+
+"heroku apps:rename <newname> --app <oldname>": change name outside of git
+
+"git remote rm heroku
+heroku git:remote -a <newname>": update the remote if you renamed the remote from the website, newname is what you named it from the website
+
+"heroku git:remote -a falling-wind-1624": add a heroku remote from existing git remote for the first time
+
+git push heroku master: push project to heroku branch
+
+"git push heroku yourbranch:master": since heroku ignores branches, you must push using this colon example
+
+    --Heroku apps--
+
+heroku apps: list all heroku apps you are developing in total
+"heroku apps:info": list single heroku app and description
+"heroku apps:info --app <appname>": if multiple apps exist in heroku, you must use this option to specify which app you want the info about
+"heroku apps:info --remote <remotename>": list the remote by name and info
+
+    --Heroku addons--
+
+"heroku addons:add <addonname>": addon a software to heroku app
+"heroku addons:open <addonname>": open the addon
+
+    --Heroku config--
+
+"heroku config:get <optionname>": retrieve option data value
+"heroku config:set <optionname>="data to assign": assign value to config
+    i.e.: "heroku config:set NODE_ENV=production": to set node to prod mode
+
+    --delete heroku CLI--
+
+rm -rf /usr/local/heroku
+rm -rf ~/.local/share/heroku ~/.config/heroku ~/.cache/heroku
+

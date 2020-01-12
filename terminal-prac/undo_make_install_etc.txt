@@ -1,0 +1,17 @@
+This will remind you how to undo make, make install, autogen, and ./configure
+These may not work but mostly likely will and must be run within the file
+
+make, make install
+	make clean
+	make uninstall
+
+autogen.sh, ./configure
+	make clean
+	make distclean
+
+others include....
+
+make mostlyclean
+make clean
+make distclean
+make maintainer-clean
