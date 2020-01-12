@@ -3,9 +3,11 @@ I'm practicing how to create branches and merge and reset stuff.
 First I will add this line and delete it.
 Another line
 
+This link has commonly used git commands: https://github.com/joshnh/Git-Commands
+
 git add -p <file>: this will allow you to add specific lines to stage instead of the entire file
 
-git merge <branch> for merge specified <branch> into current branch
+git blame <file>: produce a commit history of every change for that file by date, author, hash and lines that changed
 
 git branch -d <branch> to delete branch after changes have been commited
 
@@ -13,30 +15,72 @@ git branch -dr origin/<branch> to delete branch & remote branch on github
 
 git branch -a to show all the branches including the hidden branches you never worked with
 
-git push origin  --delete <remote-branch> to only delete remote github branch 
-
-git push -u origin master  to make your first commit to your new repository
-
-git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits
-
-git fetch --dry-run: see what will happen when you run a pull
-
-git rm --cached <filename> to remove the file from git push for gitignore (opposite of git add)
-
-git rm -r --cached . to remove all these files from the stage, below is safer, research git head and path
-
-git reset (<file>) to unstage file, or leave out file to unstage all
-
-git reset --hard <commit> to reset back to commit permanently
+git commit --amend to add another file or change to the last commit
 
 git checkout -- <file> to remove a file being asked to be "git add ."
 
-git commit --amend to add another file or change to the last commit
+git checkout --ours <file> to resolve merge conflict by using our addition
+
+git checkout --theirs <file> is same as above but using theirs
+
+git diff <local-branch-name> <remote/local-branch-name> to see what the remote has changed vs your local
+
+git diff <branch-one>...<branch-two>: check what are the changes that both one and two doesn't have based on their common ancestor
+
+git fetch to update current branch's remote
+
+git fetch --dry-run: see what will happen when you run a pull
+
+git log --grep="<grep pattern>": log only files that have specified patterns listed in the git log
+
+git log --author="<author-name>": list the author commits in this branch for git log
+
+git merge <branch> for merge specified <branch> into current branch
+
+git pull -r [<remote-name>, <branch-name>]: pull all the changes from the git remote without any merges, will place your commits after the new remote commits, DANGEROUS
+
+git pull <remote-name> <remote-branch-to-pull-from:branch-to-get-pull>: this provides the branch that you want updates from and apply it to the branch that you want the commit updates. Normally to keep a new branch updated for a PR
+
+git push origin  --delete <remote-branch> to only delete remote github branch 
+
+git push -u origin master  to make your first commit to your new repository
 
 git remote -v   to see current remotes and their links
 
 git remote add upstream <remote-URL> to add another remote repo to pull/push from ("upstream" is usually the original parent repo fork)
 
 git remote set-url <remote-name> <URL> to redirect remote's current link to a new link
+
+git remote update to update all the branches on that remote (i.e. origin will update all branches)
+
+git reset (<file>) to unstage file, or leave out file to unstage all
+
+git reset --hard <commit> to reset back to commit permanently
+
+git rm --cached <filename> to remove the file from git push for gitignore (opposite of git add)
+
+git rm -r --cached . to remove all these files from the stage, default git reset is safer, research git head and path
+
+git stash: add whatever changes you have working on your tree to the stash to reuse later and work on something else
+
+git stash list: list out all the stashes that are saves
+
+git stash save "message": will save a working tree into your stash with a message and add it to the top of the stash stack (i.e. stash@{0}: On <branch>: message will show here)
+
+git stash pop: take the most recent stash and apply it to the current working tree
+
+git stash pop stash@{<number>}: will pop and apply the stash at index to current working directory
+
+git stash apply: same as pop but we keep a copy of the stash for later use in other branches (possibly)
+
+git stash -u: stash working tree changes, including untracked files
+
+git stash -a: stash everything including ignored files
+
+git stash -p: similar to git add -p where only the hunks chosen will be added to the stash for later review
+
+git stash drop stash@{<number>}: clear the indicated stash index
+
+git stash clear: remove all stashes stored
 
 Thanks!
